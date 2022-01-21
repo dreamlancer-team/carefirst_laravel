@@ -21,7 +21,7 @@ class CreateMedicinesTable extends Migration
             $table->foreignId('medicine_type_id');
             $table->foreignId('medicine_category_id');
             $table->foreignId('medicine_brand_id');
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->constrained();
         });
     }
 

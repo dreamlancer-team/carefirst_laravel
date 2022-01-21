@@ -1,0 +1,13 @@
+{
+    "name": "IPD",
+    "alias": "ipd",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\IPD\\Providers\\IPDServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

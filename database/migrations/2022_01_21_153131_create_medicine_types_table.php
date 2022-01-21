@@ -18,7 +18,7 @@ class CreateMedicineTypesTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->boolean('status')->default(1);
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->constrained();
         });
     }
 

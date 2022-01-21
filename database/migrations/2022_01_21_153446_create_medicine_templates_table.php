@@ -16,10 +16,10 @@ class CreateMedicineTemplatesTable extends Migration
         Schema::create('medicine_templates', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('code');
+            $table->string('code')->nullable();
             $table->string('slug');
             $table->json('data');
-            $table->foreign('user_id');
+            $table->foreignId('user_id')->constrained();
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

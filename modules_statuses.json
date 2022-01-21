@@ -1,0 +1,10 @@
+{
+    "Medicine": true,
+    "User": true,
+    "Inventory": true,
+    "Assets": true,
+    "OPD": true,
+    "IPD": true,
+    "Pharmacy": true,
+    "Patient": true
+}
