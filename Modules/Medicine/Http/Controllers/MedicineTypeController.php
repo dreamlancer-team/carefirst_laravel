@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MedicineType;
+use App\Entities\MedicineType;
 use App\Http\Requests\StoreMedicineTypeRequest;
 use App\Http\Requests\UpdateMedicineTypeRequest;
 
@@ -42,7 +42,7 @@ class MedicineTypeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\MedicineType  $medicineType
+     * @param  \App\Entities\MedicineType  $medicineType
      * @return \Illuminate\Http\Response
      */
     public function show(MedicineType $medicineType)
@@ -53,7 +53,7 @@ class MedicineTypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\MedicineType  $medicineType
+     * @param  \App\Entities\MedicineType  $medicineType
      * @return \Illuminate\Http\Response
      */
     public function edit(MedicineType $medicineType)
@@ -65,7 +65,7 @@ class MedicineTypeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateMedicineTypeRequest  $request
-     * @param  \App\Models\MedicineType  $medicineType
+     * @param  \App\Entities\MedicineType  $medicineType
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateMedicineTypeRequest $request, MedicineType $medicineType)
@@ -76,7 +76,7 @@ class MedicineTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\MedicineType  $medicineType
+     * @param  \App\Entities\MedicineType  $medicineType
      * @return \Illuminate\Http\Response
      */
     public function destroy(MedicineType $medicineType)

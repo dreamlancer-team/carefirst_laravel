@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MedicineBrand;
+use App\Entities\MedicineBrand;
 use App\Http\Requests\StoreMedicineBrandRequest;
 use App\Http\Requests\UpdateMedicineBrandRequest;
 
@@ -42,7 +42,7 @@ class MedicineBrandController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\MedicineBrand  $medicineBrand
+     * @param  \App\Entities\MedicineBrand  $medicineBrand
      * @return \Illuminate\Http\Response
      */
     public function show(MedicineBrand $medicineBrand)
@@ -53,7 +53,7 @@ class MedicineBrandController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\MedicineBrand  $medicineBrand
+     * @param  \App\Entities\MedicineBrand  $medicineBrand
      * @return \Illuminate\Http\Response
      */
     public function edit(MedicineBrand $medicineBrand)
@@ -65,7 +65,7 @@ class MedicineBrandController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateMedicineBrandRequest  $request
-     * @param  \App\Models\MedicineBrand  $medicineBrand
+     * @param  \App\Entities\MedicineBrand  $medicineBrand
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateMedicineBrandRequest $request, MedicineBrand $medicineBrand)
@@ -76,7 +76,7 @@ class MedicineBrandController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\MedicineBrand  $medicineBrand
+     * @param  \App\Entities\MedicineBrand  $medicineBrand
      * @return \Illuminate\Http\Response
      */
     public function destroy(MedicineBrand $medicineBrand)

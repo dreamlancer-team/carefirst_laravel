@@ -4,6 +4,7 @@ namespace Modules\Medicine\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Medicine\Entities\MedicineCategory;
 
 class MedicineDatabaseSeeder extends Seeder
 {
@@ -16,6 +17,11 @@ class MedicineDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        MedicineCategory::insert([
+            'id' => 1,
+            'name' => 'Tablet',
+            'slug' => 'tablet',
+            'user_id' => 1
+        ]);
     }
 }

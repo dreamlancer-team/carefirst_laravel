@@ -16,7 +16,7 @@ class MedicineController extends Controller
      */
     public function index()
     {
-        return 'Medicine Controller';
+        return Medicine::all();
     }
 
     /**
@@ -26,7 +26,7 @@ class MedicineController extends Controller
      */
     public function create()
     {
-        //
+        return 'Medicine Controller creating';
     }
 
     /**
@@ -43,7 +43,7 @@ class MedicineController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Medicine  $medicine
+     * @param  \App\Entities\Medicine  $medicine
      * @return \Illuminate\Http\Response
      */
     public function show(Medicine $medicine)
@@ -54,7 +54,7 @@ class MedicineController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Medicine  $medicine
+     * @param  \App\Entities\Medicine  $medicine
      * @return \Illuminate\Http\Response
      */
     public function edit(Medicine $medicine)
@@ -66,7 +66,7 @@ class MedicineController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateMedicineRequest  $request
-     * @param  \App\Models\Medicine  $medicine
+     * @param  \App\Entities\Medicine  $medicine
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateMedicineRequest $request, Medicine $medicine)
@@ -77,7 +77,7 @@ class MedicineController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Medicine  $medicine
+     * @param  \App\Entities\Medicine  $medicine
      * @return \Illuminate\Http\Response
      */
     public function destroy(Medicine $medicine)

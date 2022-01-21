@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Modules\Medicine\Http\Controllers;
 
-use App\Models\MedicineCategory;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreMedicineCategoryRequest;
 use App\Http\Requests\UpdateMedicineCategoryRequest;
+use Modules\Medicine\Entities\MedicineCategory;
 
 class MedicineCategoryController extends Controller
 {
@@ -15,7 +16,8 @@ class MedicineCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $medicine_categories = MedicineCategory::withCount('medicines')->get();
+        return view('medicine::medicine-category.index', compact('medicine_categories'));
     }
 
     /**
@@ -42,7 +44,7 @@ class MedicineCategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\MedicineCategory  $medicineCategory
+     * @param  \App\Entities\MedicineCategory  $medicineCategory
      * @return \Illuminate\Http\Response
      */
     public function show(MedicineCategory $medicineCategory)
@@ -53,7 +55,7 @@ class MedicineCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\MedicineCategory  $medicineCategory
+     * @param  \App\Entities\MedicineCategory  $medicineCategory
      * @return \Illuminate\Http\Response
      */
     public function edit(MedicineCategory $medicineCategory)
@@ -65,7 +67,7 @@ class MedicineCategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateMedicineCategoryRequest  $request
-     * @param  \App\Models\MedicineCategory  $medicineCategory
+     * @param  \App\Entities\MedicineCategory  $medicineCategory
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateMedicineCategoryRequest $request, MedicineCategory $medicineCategory)
@@ -76,7 +78,7 @@ class MedicineCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\MedicineCategory  $medicineCategory
+     * @param  \App\Entities\MedicineCategory  $medicineCategory
      * @return \Illuminate\Http\Response
      */
     public function destroy(MedicineCategory $medicineCategory)

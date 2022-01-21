@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\MedicineTemplate;
+use App\Entities\MedicineTemplate;
 use App\Http\Requests\StoreMedicineTemplateRequest;
 use App\Http\Requests\UpdateMedicineTemplateRequest;
 
@@ -42,7 +42,7 @@ class MedicineTemplateController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\MedicineTemplate  $medicineTemplate
+     * @param  \App\Entities\MedicineTemplate  $medicineTemplate
      * @return \Illuminate\Http\Response
      */
     public function show(MedicineTemplate $medicineTemplate)
@@ -53,7 +53,7 @@ class MedicineTemplateController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\MedicineTemplate  $medicineTemplate
+     * @param  \App\Entities\MedicineTemplate  $medicineTemplate
      * @return \Illuminate\Http\Response
      */
     public function edit(MedicineTemplate $medicineTemplate)
@@ -65,7 +65,7 @@ class MedicineTemplateController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateMedicineTemplateRequest  $request
-     * @param  \App\Models\MedicineTemplate  $medicineTemplate
+     * @param  \App\Entities\MedicineTemplate  $medicineTemplate
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateMedicineTemplateRequest $request, MedicineTemplate $medicineTemplate)
@@ -76,7 +76,7 @@ class MedicineTemplateController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\MedicineTemplate  $medicineTemplate
+     * @param  \App\Entities\MedicineTemplate  $medicineTemplate
      * @return \Illuminate\Http\Response
      */
     public function destroy(MedicineTemplate $medicineTemplate)

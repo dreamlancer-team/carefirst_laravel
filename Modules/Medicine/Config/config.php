@@ -1,5 +1,8 @@
 <?php
 
 return [
-    'name' => 'Medicine'
+    'name' => 'Medicine',
+    "modules"  => [
+        'medicine' => true
+    ]
 ];
