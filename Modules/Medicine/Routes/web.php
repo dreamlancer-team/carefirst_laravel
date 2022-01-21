@@ -11,6 +11,9 @@
 |
 */
 
-Route::prefix('medicine')->group(function() {
-    Route::get('/', 'MedicineController@index');
+use Illuminate\Support\Facades\Route;
+use Modules\Medicine\Http\Controllers\MedicineController;
+
+Route::prefix('medicine')->group(function () {
+    Route::get('/', [MedicineController::class, 'index']);
 });

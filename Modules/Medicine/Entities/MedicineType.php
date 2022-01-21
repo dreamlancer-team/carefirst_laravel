@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace Modules\Medicine\Entities;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MedicineBrand extends Model
+class MedicineType extends Model
 {
     use HasFactory;
 }

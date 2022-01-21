@@ -2,77 +2,85 @@
 
 namespace Modules\Medicine\Http\Controllers;
 
-use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreMedicineRequest;
+use App\Http\Requests\UpdateMedicineRequest;
 use Illuminate\Routing\Controller;
+use Modules\Medicine\Entities\Medicine;
 
 class MedicineController extends Controller
 {
     /**
      * Display a listing of the resource.
-     * @return Renderable
+     *
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('medicine::index');
+        return 'Medicine Controller';
     }
 
     /**
      * Show the form for creating a new resource.
-     * @return Renderable
+     *
+     * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('medicine::create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
-     */
-    public function store(Request $request)
     {
         //
     }
 
     /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Renderable
+     * Store a newly created resource in storage.
+     *
+     * @param  \App\Http\Requests\StoreMedicineRequest  $request
+     * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function store(StoreMedicineRequest $request)
     {
-        return view('medicine::show');
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Medicine  $medicine
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Medicine $medicine)
+    {
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
+     *
+     * @param  \App\Models\Medicine  $medicine
+     * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Medicine $medicine)
     {
-        return view('medicine::edit');
+        //
     }
 
     /**
      * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Renderable
+     *
+     * @param  \App\Http\Requests\UpdateMedicineRequest  $request
+     * @param  \App\Models\Medicine  $medicine
+     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateMedicineRequest $request, Medicine $medicine)
     {
         //
     }
 
     /**
      * Remove the specified resource from storage.
-     * @param int $id
-     * @return Renderable
+     *
+     * @param  \App\Models\Medicine  $medicine
+     * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Medicine $medicine)
     {
         //
     }
