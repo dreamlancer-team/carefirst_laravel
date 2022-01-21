@@ -1,21 +1,21 @@
 <?php
 
-namespace Modules\Assets\Providers;
+namespace Modules\Asset\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
 
-class AssetsServiceProvider extends ServiceProvider
+class AssetServiceProvider extends ServiceProvider
 {
     /**
      * @var string $moduleName
      */
-    protected $moduleName = 'Assets';
+    protected $moduleName = 'Asset';
 
     /**
      * @var string $moduleNameLower
      */
-    protected $moduleNameLower = 'assets';
+    protected $moduleNameLower = 'asset';
 
     /**
      * Boot the application events.

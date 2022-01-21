@@ -11,6 +11,6 @@
 |
 */
 
-Route::prefix('assets')->group(function() {
-    Route::get('/', 'AssetsController@index');
+Route::prefix('asset')->group(function() {
+    Route::get('/', 'AssetController@index');
 });

@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\Assets\Http\Controllers;
+namespace Modules\Asset\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class AssetsController extends Controller
+class AssetController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class AssetsController extends Controller
      */
     public function index()
     {
-        return view('assets::index');
+        return view('asset::index');
     }
 
     /**
@@ -23,7 +23,7 @@ class AssetsController extends Controller
      */
     public function create()
     {
-        return view('assets::create');
+        return view('asset::create');
     }
 
     /**
@@ -43,7 +43,7 @@ class AssetsController extends Controller
      */
     public function show($id)
     {
-        return view('assets::show');
+        return view('asset::show');
     }
 
     /**
@@ -53,7 +53,7 @@ class AssetsController extends Controller
      */
     public function edit($id)
     {
-        return view('assets::edit');
+        return view('asset::edit');
     }
 
     /**

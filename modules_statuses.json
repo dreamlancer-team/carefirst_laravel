@@ -6,5 +6,6 @@
     "OPD": true,
     "IPD": true,
     "Pharmacy": true,
-    "Patient": true
+    "Patient": true,
+    "Asset": true
 }
