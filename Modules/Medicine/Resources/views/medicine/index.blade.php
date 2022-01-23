@@ -1,5 +1,7 @@
-<x-app-layout>
+@extends('medicine::master')
 
-    
-
-</x-app-layout>
+@push('main')
+<x-content.content>
+    <x-badge.badge :status='true'></x-badge.badge>
+</x-content.content>
+@endpush
