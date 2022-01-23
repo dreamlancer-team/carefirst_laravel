@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Entities\MedicineType;
 use App\Http\Requests\StoreMedicineTypeRequest;
 use App\Http\Requests\UpdateMedicineTypeRequest;
+use Modules\Medicine\Entities\MedicineType;
 
 class MedicineTypeController extends Controller
 {

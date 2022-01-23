@@ -16,7 +16,7 @@ class MedicineController extends Controller
      */
     public function index()
     {
-        return Medicine::all();
+        return view('medicine::medicine.index');
     }
 
     /**

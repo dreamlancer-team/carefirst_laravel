@@ -17,11 +17,12 @@ class MedicineDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        MedicineCategory::insert([
-            'id' => 1,
-            'name' => 'Tablet',
-            'slug' => 'tablet',
-            'user_id' => 1
-        ]);
+        for ($i = 2; $i < 10000; $i++) {
+            MedicineCategory::create([
+                'id' => $i,
+                'name' => 'Tablet ' . $i,
+                'user_id' => 1
+            ]);
+        }
     }
 }
