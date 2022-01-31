@@ -3,9 +3,9 @@
 namespace Modules\Medicine\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreMedicineCategoryRequest;
-use App\Http\Requests\UpdateMedicineCategoryRequest;
 use Modules\Medicine\Entities\MedicineCategory;
+use Modules\Medicine\Http\Requests\StoreMedicineCategoryRequest;
+use Modules\Medicine\Http\Requests\UpdateMedicineCategoryRequest;
 
 class MedicineCategoryController extends Controller
 {
@@ -21,16 +21,6 @@ class MedicineCategoryController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreMedicineCategoryRequest  $request
@@ -38,51 +28,50 @@ class MedicineCategoryController extends Controller
      */
     public function store(StoreMedicineCategoryRequest $request)
     {
-        //
-    }
+        if ($request->validated()) {
+            MedicineCategory::create([
+                'name' => $request->name,
+                'slug' => slug($request->name),
+                'status' => 1,
+                'user_id' => getLoggedInUserId(),
+            ]);
+        }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Entities\MedicineCategory  $medicineCategory
-     * @return \Illuminate\Http\Response
-     */
-    public function show(MedicineCategory $medicineCategory)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Entities\MedicineCategory  $medicineCategory
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(MedicineCategory $medicineCategory)
-    {
-        //
+        return back();
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateMedicineCategoryRequest  $request
-     * @param  \App\Entities\MedicineCategory  $medicineCategory
+     * @param  \App\Entities\MedicineCategory  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateMedicineCategoryRequest $request, MedicineCategory $medicineCategory)
+    public function update(UpdateMedicineCategoryRequest $request, MedicineCategory $category)
     {
-        //
+
+        if ($request->validated()) {
+            $category->update([
+                'name' => $request->name,
+                'slug' => slug($request->name),
+                'status' => 1,
+                'user_id' => getLoggedInUserId(),
+            ]);
+        }
+
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Entities\MedicineCategory  $medicineCategory
+     * @param  \App\Entities\MedicineCategory  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MedicineCategory $medicineCategory)
+    public function destroy(MedicineCategory $category)
     {
-        //
+        $category->delete();
+
+        return back();
     }
 }

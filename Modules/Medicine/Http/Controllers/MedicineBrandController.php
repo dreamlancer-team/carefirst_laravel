@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Modules\Medicine\Http\Controllers;
 
-use App\Entities\MedicineBrand;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreMedicineBrandRequest;
 use App\Http\Requests\UpdateMedicineBrandRequest;
+use Modules\Medicine\Entities\MedicineBrand;
 
 class MedicineBrandController extends Controller
 {

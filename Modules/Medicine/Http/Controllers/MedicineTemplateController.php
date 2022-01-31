@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Modules\Medicine\Http\Controllers;
 
-use App\Entities\MedicineTemplate;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreMedicineTemplateRequest;
 use App\Http\Requests\UpdateMedicineTemplateRequest;
+use Modules\Medicine\Entities\MedicineTemplate;
 
 class MedicineTemplateController extends Controller
 {

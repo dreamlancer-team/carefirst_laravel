@@ -4,15 +4,14 @@ namespace Modules\Medicine\Entities;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Http\Traits\SlugTrait;
 
 class MedicineCategory extends Model
 {
-    use HasFactory, SlugTrait;
+    use HasFactory;
 
     public $timestamps = false;
 
-    protected $fillable = ['name', 'user_id'];
+    protected $fillable = ['name', 'slug', 'status', 'user_id'];
 
     public function user()
     {

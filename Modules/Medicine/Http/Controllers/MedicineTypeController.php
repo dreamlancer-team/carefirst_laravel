@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Modules\Medicine\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreMedicineTypeRequest;
 use App\Http\Requests\UpdateMedicineTypeRequest;
 use Modules\Medicine\Entities\MedicineType;
