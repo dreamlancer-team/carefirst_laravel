@@ -3,9 +3,9 @@
 namespace Modules\Medicine\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreMedicineBrandRequest;
-use App\Http\Requests\UpdateMedicineBrandRequest;
 use Modules\Medicine\Entities\MedicineBrand;
+use Modules\Medicine\Http\Requests\StoreMedicineBrandRequest;
+use Modules\Medicine\Http\Requests\UpdateMedicineBrandRequest;
 
 class MedicineBrandController extends Controller
 {
@@ -16,72 +16,61 @@ class MedicineBrandController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $medicine_brands = MedicineBrand::withCount('medicines')->get();
+        return view('medicine::medicine-brand.index', compact('medicine_brands'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreMedicineBrandRequest  $request
+     * @param  \Modules\Medicine\Http\Requests\StoreMedicineBrandRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreMedicineBrandRequest $request)
     {
-        //
-    }
+        if ($request->validated()) {
+            MedicineBrand::create([
+                'name' => $request->name,
+                'slug' => slug($request->name),
+                'status' => 1,
+                'user_id' => getLoggedInUserId(),
+            ]);
+        }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Entities\MedicineBrand  $medicineBrand
-     * @return \Illuminate\Http\Response
-     */
-    public function show(MedicineBrand $medicineBrand)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Entities\MedicineBrand  $medicineBrand
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(MedicineBrand $medicineBrand)
-    {
-        //
+        return back();
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateMedicineBrandRequest  $request
-     * @param  \App\Entities\MedicineBrand  $medicineBrand
+     * @param  \Modules\Medicine\Http\Requests\UpdateMedicineBrandRequest  $request
+     * @param  \Modules\Medicine\Entities\MedicineBrand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateMedicineBrandRequest $request, MedicineBrand $medicineBrand)
+    public function update(UpdateMedicineBrandRequest $request, MedicineBrand $brand)
     {
-        //
+        if ($request->validated()) {
+            $brand->update([
+                'name' => $request->name,
+                'slug' => slug($request->name),
+                'status' => 1,
+                'user_id' => getLoggedInUserId(),
+            ]);
+        }
+
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Entities\MedicineBrand  $medicineBrand
+     * @param  \Modules\Medicine\Entities\MedicineBrand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MedicineBrand $medicineBrand)
+    public function destroy(MedicineBrand $brand)
     {
-        //
+        $brand->delete();
+
+        return back();
     }
 }

@@ -23,7 +23,7 @@ class MedicineCategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreMedicineCategoryRequest  $request
+     * @param  \Modules\Medicine\Http\Requests\StoreMedicineCategoryRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(StoreMedicineCategoryRequest $request)
@@ -43,8 +43,8 @@ class MedicineCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateMedicineCategoryRequest  $request
-     * @param  \App\Entities\MedicineCategory  $category
+     * @param  \Modules\Medicine\Http\Requests\UpdateMedicineCategoryRequest  $request
+     * @param  \Modules\Medicine\Entities\MedicineCategory  $category
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateMedicineCategoryRequest $request, MedicineCategory $category)
@@ -65,7 +65,7 @@ class MedicineCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Entities\MedicineCategory  $category
+     * @param  \Modules\Medicine\Entities\MedicineCategory  $category
      * @return \Illuminate\Http\Response
      */
     public function destroy(MedicineCategory $category)

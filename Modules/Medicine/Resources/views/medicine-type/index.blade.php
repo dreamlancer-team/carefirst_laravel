@@ -6,7 +6,7 @@
         <x-card.header title="Medicine Type">
             <form action="{{ route('type.store') }}" method="post">
                 @csrf
-                <x-modal.modal title="Medicine Tyoe">
+                <x-modal.modal title="Medicine Type">
                     <x-form.input label="Name" name="name"></x-form.input>
                 </x-modal.modal>
             </form>
