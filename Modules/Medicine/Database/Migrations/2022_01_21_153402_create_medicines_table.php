@@ -18,9 +18,9 @@ class CreateMedicinesTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->text('description')->nullable();
-            $table->foreignId('medicine_type_id');
-            $table->foreignId('medicine_category_id');
-            $table->foreignId('medicine_brand_id');
+            $table->foreignId('medicine_type_id')->constrained()->nullable();
+            $table->foreignId('medicine_category_id')->constrained()->nullable();
+            $table->foreignId('medicine_brand_id')->constrained()->nullable();
             $table->foreignId('user_id')->constrained();
         });
     }

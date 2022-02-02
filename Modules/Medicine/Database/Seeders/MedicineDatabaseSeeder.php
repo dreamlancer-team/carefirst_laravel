@@ -16,13 +16,5 @@ class MedicineDatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-
-        for ($i = 2; $i < 10000; $i++) {
-            MedicineCategory::create([
-                'id' => $i,
-                'name' => 'Tablet ' . $i,
-                'user_id' => 1
-            ]);
-        }
     }
 }

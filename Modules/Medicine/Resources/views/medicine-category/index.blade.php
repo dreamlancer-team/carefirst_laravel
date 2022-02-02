@@ -3,7 +3,7 @@
 @push('main')
 <x-content.content>
     <div class="card">
-        <x-card.header title="Medicine">
+        <x-card.header title="Medicine Category">
             <form action="{{ route('category.store') }}" method="post">
                 @csrf
                 <x-modal.modal title="Medicine Category">
