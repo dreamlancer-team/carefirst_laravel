@@ -13,7 +13,7 @@ class UpdateMedicineRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class UpdateMedicineRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|unique:medicines,name',
+            'description' => 'sometimes',
+            'medicine_brand_id' => 'required',
+            'medicine_category_id' => 'required',
+            'medicine_type_id' => 'required',
+            'user_id' => 'required',
         ];
     }
 }

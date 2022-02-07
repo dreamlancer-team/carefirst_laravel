@@ -15,13 +15,31 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('medicine')->group(function () {
 
-    Route::resource('/', 'MedicineController');
+    Route::resource('/', 'MedicineController', [
+        'names' => [
+            'index' => 'medicine.index',
+            'store' => 'medicine.store',
+            'update' => 'medicine.update',
+            'destroy' => 'medicine.destroy',
+        ]
+    ])
+        ->only([
+            'index', 'store', 'update', 'destroy'
+        ]);
 
-    Route::resource('/brand', 'MedicineBrandController');
+    Route::resource('/brand', 'MedicineBrandController')->only([
+        'index', 'store', 'update', 'destroy'
+    ]);
 
-    Route::resource('/type', 'MedicineTypeController');
+    Route::resource('/type', 'MedicineTypeController')->only([
+        'index', 'store', 'update', 'destroy'
+    ]);
 
-    Route::resource('/category', 'MedicineCategoryController');
+    Route::resource('/category', 'MedicineCategoryController')->only([
+        'index', 'store', 'update', 'destroy'
+    ]);
 
-    Route::resource('/template', 'MedicineTemplateController');
+    Route::resource('/template', 'MedicineTemplateController')->only([
+        'index', 'store', 'update', 'destroy'
+    ]);
 });
