@@ -19,7 +19,7 @@
                     <td>{{ $category -> name }}</td>
                     <td>{{ $category -> medicines_count }}</td>
                     <td class="d-flex gap-4">
-                        <form action="{{ route('category.show', $category -> id) }}" method="post">
+                        <form action="{{ route('category.update', $category -> id) }}" method="post">
                             @csrf
                             {{ method_field('PUT') }}
                             <x-modal.modal btnName="Edit" title="Medicine Update" id="{{ $category -> id }}">

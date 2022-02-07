@@ -19,7 +19,7 @@
                     <td>{{ $brand -> name }}</td>
                     <td>{{ $brand -> medicines_count }}</td>
                     <td class="d-flex gap-4">
-                        <form action="{{ route('brand.show', $brand -> id) }}" method="post">
+                        <form action="{{ route('brand.update', $brand -> id) }}" method="post">
                             @csrf
                             {{ method_field('PUT') }}
                             <x-modal.modal btnName="Edit" title="Medicine Update" id="{{ $brand -> id }}">

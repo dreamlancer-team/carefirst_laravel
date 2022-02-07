@@ -11,6 +11,8 @@
 |
 */
 
-Route::prefix('inventory')->group(function() {
+use Illuminate\Support\Facades\Route;
+
+Route::prefix('inventory')->group(function () {
     Route::get('/', 'InventoryController@index');
 });
